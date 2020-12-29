@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889769677416",
+    "project_id": "pramagang-8785c",
+    "storage_bucket": "pramagang-8785c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889769677416:android:2ff087dd1aa3fab83861dd",
+        "android_client_info": {
+          "package_name": "com.example.pramagang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889769677416-9t1p3i29cd3omb9v99atkj86lvmse63n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVcngMdODOwZ4Eh2esV9we2AegSQ59siI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889769677416-9t1p3i29cd3omb9v99atkj86lvmse63n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
