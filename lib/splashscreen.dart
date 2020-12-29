@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'form.dart';
+import 'package:pramagang/pages/form.dart';
 import 'dart:async';
 
 class SplashScreenPage extends StatefulWidget {
