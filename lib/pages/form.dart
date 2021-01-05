@@ -114,7 +114,7 @@ class ContentArea extends StatelessWidget {
                           ),
                           alignment: Alignment.center,
                           child: const Text(
-                            'Register',
+                            'Sign up',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
