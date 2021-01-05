@@ -29,7 +29,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         backgroundColor: Color(0xffffffff),
         body: Center(
           child: Image.asset(
-            "lib/images/logos.JPG",
+            'assets/images/log.png',
             width: 500.0,
             height: 300.0,
           ),

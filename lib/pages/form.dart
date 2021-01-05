@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:pramagang/pages/register.dart';
+import 'dart:async';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatelessWidget {
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Scaffold(
       //KITA DETECT MENGGUNAKAN MEDIAQUERY, JIKA SCREEN LANDSCAPE
@@ -42,21 +44,8 @@ class ContentArea extends StatelessWidget {
               children: <Widget>[
                 //DERETA PERTAMA TERDIRI DARI 2 BAGIAN, 1 REMEMBER ME DAN SELANJUTNYA ADALAH TOMBOL LOGIN MAKA KITA GUNAKAN ROW UNTUK MENGURUTKANNYA SECARA HORIZONTAL
                 Row(
+              
                   children: <Widget>[
-                    //BUAT CHECKBOX
-                    Checkbox(
-                      onChanged: (_) {},
-                      value: false,
-                    ),
-                    //DIIKUTI DENGAN TEKSNYA
-                    Text(
-                      "Remember Me",
-                      style: TextStyle(),
-                    ),
-                    //ANTARA REMEMBER ME DAN TOMBOL LOGIN KITA BERI JARAK DENGAN SPACER
-                    Spacer(
-                      flex: 2,
-                    ),
                     //KEMUDIAN BUAT RAISED BUTTON DENGAN GRADIENT, PENJELASANNYA ADA PADA SUB-BAB PERTAMA
                     RaisedButton(
                       onPressed: () {},
@@ -92,9 +81,54 @@ class ContentArea extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ),
+                  
+                   RaisedButton(
+                      onPressed: () {
+                         Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => RegisterPage()
+        ),
+      );
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0),
+                      ),
+                      padding: const EdgeInsets.all(0.0),
+                      child: Ink(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color(0xFF13E3D2),
+                              Color(0xFF5D74E2)
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(80.0),
+                          ),
+                        ),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                            minWidth: 150.0,
+                            minHeight: 36.0,
+                          ),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            'Register',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                
+                          ),
+                             
+                ),
+                      ),
                     )
                   ],
                 ),
+              
                 //MENAMPILKAN TEKS SOCIAL BUTTON DIBAWAH DERETAN TOMBOL LOGIN
                 Padding(
                   padding: EdgeInsets.only(top: 15),
@@ -112,6 +146,7 @@ class ContentArea extends StatelessWidget {
                 //DAN YANG TERAKHIR ADALAH TOMBOL SOCIAL BUTTON YANG DIPISAHKAN DENGAN CLASS BARU LAGI
                 SocialButton()
               ],
+          
             ),
           ),
         )
@@ -149,7 +184,7 @@ class FormLogin extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white10,
               image: DecorationImage(
-                image: AssetImage('images/nana.png'),
+                image: AssetImage('assets/images/nana.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -173,7 +208,7 @@ class FormLogin extends StatelessWidget {
                     children: <Widget>[
                       //BAGIAN PERTAMA ADALAH TEKS FORM LOGIN
                       Padding(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 2),
                         child: Text(
                           "Login Form",
                           style: TextStyle(
@@ -272,7 +307,7 @@ class SocialButton extends StatelessWidget {
             heroTag: null,
             onPressed: () {},
             child: Image.asset(
-              'images/facebook.png',
+              'assets/images/facebook.png',
             ),
             backgroundColor: Color(0xFF5D74E2),
           ),
@@ -283,7 +318,7 @@ class SocialButton extends StatelessWidget {
             heroTag: null,
             onPressed: () {},
             child: Image.asset(
-              'images/twitter.png',
+              'assets/images/twitter.png',
             ),
             backgroundColor: Colors.white,
           ),
@@ -294,7 +329,7 @@ class SocialButton extends StatelessWidget {
             heroTag: null,
             onPressed: () {},
             child: Image.asset(
-              'images/google.png',
+              'assets/images/google.png',
             ),
             backgroundColor: Colors.white,
           ),
@@ -303,11 +338,13 @@ class SocialButton extends StatelessWidget {
           heroTag: null,
           onPressed: () {},
           child: Image.asset(
-            'images/linkedin.png',
+            'assets/images/linkedin.png',
           ),
           backgroundColor: Color(0xFF5D74E2),
         ),
+   
       ],
+   
     );
   }
 }
