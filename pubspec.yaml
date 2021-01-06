@@ -31,6 +31,11 @@ dependencies:
   firebase_auth: ^0.18.4+1
   cloud_firestore: ^0.14.4
   fluttertoast: ^7.1.5
+  flutter_svg: ^0.18.0 # help us to use SVG in our app
+  provider: ^4.3.1 # for State management
+  font_awesome_flutter: ^8.10.0
+  google_fonts: ^1.1.1
+  awesome_loader: ^0.0.3
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +70,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/muli/Muli.ttf
+        - asset: assets/fonts/muli/Muli-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/muli/Muli-Light.ttf
+          weight: 300
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

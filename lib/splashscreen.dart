@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pramagang/pages/form.dart';
+import 'package:pramagang/screens/login-screen.dart';
 import 'dart:async';
 
 class SplashScreenPage extends StatefulWidget {
@@ -15,12 +15,14 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   }
 
   startSplashScreen() async {
-    var duration = const Duration(seconds: 3);
-    return Timer(duration, () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
-        return Login();
-      }));
+   Timer(Duration(milliseconds: 2500), () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (ctx) => LoginScreen(),
+          ));
     });
+
   }
 
   @override
