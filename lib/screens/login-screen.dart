@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pramagang/pallete.dart';
 import 'package:pramagang/widgets/widgets.dart';
 import 'package:pramagang/screens/create-new-account.dart';
+import 'package:pramagang/pages/home.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -42,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     inputAction: TextInputAction.done,
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
+                    onTap: () => Navigator.pushNamed(context, 'HomePage'),
                     child: Text(
                       'Forgot Password',
                       style: kBodyText,
