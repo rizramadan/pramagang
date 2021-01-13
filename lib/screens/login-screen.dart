@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pramagang/pallete.dart';
 import 'package:pramagang/widgets/widgets.dart';
 import 'package:pramagang/screens/create-new-account.dart';
-import 'package:pramagang/pages/home.dart';
+import 'package:pramagang/pages/homepages/views/home.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -61,13 +61,13 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                 onTap: () {
-                         Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => CreateNewAccount()
-        ),);
-        },
-         child: Container(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CreateNewAccount()),
+                  );
+                },
+                child: Container(
                   child: Text(
                     'Create New Account',
                     style: kBodyText,
