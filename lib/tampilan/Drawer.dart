@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pramagang/tampilan/warna.dart';
 
 class DrawerBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -10,6 +11,7 @@ class DrawerBar extends StatelessWidget implements PreferredSizeWidget {
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(20),
+              color: ColorPalette.primaryDarkColor,
               child: Center(
                   child: Column(
                 children: <Widget>[

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pramagang/tampilan/Navigator.dart';
+import 'package:pramagang/tampilan/warna.dart';
+import 'package:pramagang/tampilan/Drawer.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -13,7 +16,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Scaffold(
       appBar: AppBar(
         title: new Text("PRAMAGANG"),
+        backgroundColor: ColorPalette.primaryDarkColor,
       ),
+      drawer: DrawerBar(),
     );
   }
 

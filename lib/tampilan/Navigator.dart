@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:pramagang/tampilan/warna.dart';
 
-void main() {
-  runApp(new MaterialApp(
-    title: "My Apps",
-    home: new NavigatorBar(),
-  ));
+class NavigatorBar extends StatefulWidget {
+  @override
+  _NavigatorBarState createState() => _NavigatorBarState();
 }
 
-class NavigatorBar extends StatelessWidget implements PreferredSizeWidget {
+class _NavigatorBarState extends State<NavigatorBar> {
+  int _selectedNavbar = 0;
+
+  void _changeSelectedNavBar(int index) {
+    setState(() {
+      _selectedNavbar = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +37,11 @@ class NavigatorBar extends StatelessWidget implements PreferredSizeWidget {
             title: Text('Search'),
           ),
         ],
+        currentIndex: _selectedNavbar,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        onTap: _changeSelectedNavBar,
       ),
     );
     Expanded(
@@ -61,6 +73,4 @@ class NavigatorBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
-
-  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
 }
