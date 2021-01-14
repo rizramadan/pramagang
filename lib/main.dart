@@ -4,11 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/screens.dart';
+
 void main() {
-  runApp(MyApp(
-    
-    
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,16 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     debugShowCheckedModeBanner: false,
-    title: 'SplashScreen',
-    home: SplashScreenPage(),
+      debugShowCheckedModeBanner: false,
+      title: 'SplashScreen',
+      home: SplashScreenPage(),
       theme: ThemeData(
         textTheme:
             GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-     
     );
   }
 }
