@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
     return Stack(
       children: [
         BackgroundImage(
-          image: 'assets/images/bg1.jpg',
+          image: 'assets/images/nana.png',
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     inputAction: TextInputAction.done,
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'HomePage'),
+                    onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
                     child: Text(
                       'Forgot Password',
                       style: kBodyText,
@@ -52,14 +52,49 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 25,
                   ),
-                  RoundedButton(
-                    buttonName: 'Login',
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                ],
+           ],
               ),
+             RaisedButton(
+                      onPressed: () {
+                          Navigator.push(
+                context,
+         MaterialPageRoute(builder: (context) => HomePage()
+        ),);
+        },
+                      
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0),
+                      ),
+                      padding: const EdgeInsets.all(0.0),
+                      child: Ink(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color(0xFF13E3D2),
+                              Color(0xFF5D74E2)
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(80.0),
+                          ),
+                        ),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                            minWidth: 150.0,
+                            minHeight: 36.0,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Login',
+                            textAlign: TextAlign.center,
+                            style:kBodyText.copyWith(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                      
+                
+              
               GestureDetector(
                  onTap: () {
                          Navigator.push(
