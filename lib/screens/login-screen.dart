@@ -4,6 +4,8 @@ import 'package:pramagang/pallete.dart';
 import 'package:pramagang/widgets/widgets.dart';
 import 'package:pramagang/screens/create-new-account.dart';
 import 'package:pramagang/pages/homepages/views/home.dart';
+import 'package:pramagang/tampilan/Drawer.dart';
+import 'package:pramagang/tampilan/Appbar.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -58,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                       onPressed: () {
                           Navigator.push(
                 context,
-         MaterialPageRoute(builder: (context) => HomePage()
+         MaterialPageRoute(builder: (context) => HomeAppBar()
         ),);
         },
                       

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pramagang/tampilan/warna.dart';
+import 'package:pramagang/tampilan/Drawer.dart';
 
 class NavigatorBar extends StatefulWidget {
   @override
@@ -7,6 +8,7 @@ class NavigatorBar extends StatefulWidget {
 }
 
 class _NavigatorBarState extends State<NavigatorBar> {
+  var pages = [DrawerBar()];
   int _selectedNavbar = 0;
 
   void _changeSelectedNavBar(int index) {

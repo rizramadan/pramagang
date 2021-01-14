@@ -5,6 +5,7 @@ import 'package:pramagang/pages/homepages/views/widget/home_searchbycategory.dar
 import 'package:pramagang/pages/homepages/views//widget/home_showrecentchoice.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+
 class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
