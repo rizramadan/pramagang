@@ -8,7 +8,7 @@ class NavigatorBar extends StatefulWidget {
 }
 
 class _NavigatorBarState extends State<NavigatorBar> {
-  var pages = [DrawerBar()];
+  
   int _selectedNavbar = 0;
 
   void _changeSelectedNavBar(int index) {

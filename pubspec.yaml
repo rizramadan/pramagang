@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^1.1.1
   awesome_loader: ^0.0.3
   carousel_pro: ^0.0.13 
+  curved_navigation_bar: ^0.3.4
 
 dev_dependencies:
   flutter_test:

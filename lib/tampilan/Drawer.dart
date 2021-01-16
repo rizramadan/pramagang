@@ -1,10 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:pramagang/tampilan/warna.dart';
+import 'package:pramagang/tampilan/button_nav.dart';
+import 'package:pramagang/pages/homepages/views/home.dart';
+import 'package:pramagang/pages/homepages/views/favorite.dart';
+import 'package:pramagang/pages/homepages/views/list.dart';
+import 'package:pramagang/pages/homepages/views/search.dart';
 
-class DrawerBar extends StatelessWidget implements PreferredSizeWidget {
+
+class DrawerBar extends StatefulWidget {
+  @override
+  _DrawerBarState createState() => _DrawerBarState();
+}
+
+class _DrawerBarState extends State<DrawerBar> {
+  var pages = [Home(),FavoritePage(),ListPage(),SearchPage()];
+  
+  var _selectedNavbar = 0;
+
+  void _changeSelectedNavBar(int index) {
+    
+    setState(() {
+      _selectedNavbar = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       body: pages[_selectedNavbar],
+        
+      appBar: AppBar(
+        title: Text('PRAMAGANG'),
+        backgroundColor: ColorPalette.primaryDarkColor,
+      ),
       drawer: Drawer(
         child: Column(
           children: <Widget>[
@@ -93,9 +121,63 @@ class DrawerBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ],
         ),
+     
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            title: Text('Favorite'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mail),
+            title: Text('Notification'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text('Search'),
+          ),
+        ],
+        currentIndex: _selectedNavbar,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        onTap: _changeSelectedNavBar,
+      ),
+  
+    );
+    Expanded(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        color: Colors.grey.shade100,
+        child: ListView(
+          padding: EdgeInsets.only(top: 55),
+          children: [
+            Text(
+              "Activity",
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Text(
+              "Kategori",
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
+            ),
+         
+          ],
+        ),
       ),
     );
   }
-
-  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
 }

@@ -8,36 +8,36 @@ var categories = [
     "list_perusahaan": [
       {
         "perusahaan_images": [
-          {"image": "assets/homeimage/bumn/biofarma.jpg"},
+          {"image": "assets/image/biofarma.jpg"},
         ],
-        "perusahaan_thumb_img": "assets/homeimage/bumn/biofarma.jpg",
+        "perusahaan_thumb_img": "assets/image/biofarma.jpg",
         "category_name": "PT BIO FARMA",
         "perusahaan_description":
             "Bio Farma merupakan BUMN produsen Vaksin dan Antisera, saat ini berkembang menjadi perusahaan Life Science., didirikan 6 Agustus 1890. "
       },
       {
         "perusahaan_images": [
-          {"image": "assets/homeimage/bumn/kai.jpg"}
+          {"image": "assets/image/kai.jpg"}
         ],
-        "perusahaan_thumb_img": "assets/homeimage/bumn/kai.jpg",
+        "perusahaan_thumb_img": "assets/image/kai.jpg",
         "category_name": "PT KAI PERSERO",
         "perusahaan_description":
             "PT Kereta Api Indonesia (Persero) (disingkat KAI atau PT KAI) adalah Badan Usaha Milik Negara Indonesia yang menyelenggarakan jasa angkutan kereta api. Layanan PT KAI meliputi angkutan penumpang dan barang."
       },
       {
         "perusahaan_images": [
-          {"image": "assets/homeimage/bumn/bni.jpg"}
+          {"image": "assets/image/bni.jpg"}
         ],
-        "perusahaan_thumb_img": "assets/homeimage/bumn/bni.jpg",
+        "perusahaan_thumb_img": "assets/image/bni.jpg",
         "category_name": "PT BANK NEGARA INDONESIA",
         "perusahaan_description":
             "Bank Negara Indonesia atau BNI adalah sebuah institusi bank milik pemerintah, dalam hal ini adalah perusahaan BUMN, di Indonesia. Dalam struktur manajemen organisasinya, Bank Negara Indonesia, dipimpin oleh seorang Direktur Utama yang saat ini dijabat oleh Royke Tumilaar. "
       },
       {
         "perusahaan_images": [
-          {"image": "assets/homeimage/bumn/telkom.jpg"}
+          {"image": "assets/image/telkom.jpg"}
         ],
-        "perusahaan_thumb_img": "assets/homeimage/bumn/telkom.jpg",
+        "perusahaan_thumb_img": "assets/image/telkom.jpg",
         "category_name": "PT TELEKOMUNIKASI INDONESIA",
         "perusahaan_description":
             "PT Telkom Indonesia (Persero) Tbk (Telkom) adalah Badan Usaha Milik Negara (BUMN) yang bergerak di bidang jasa layanan teknologi informasi dan komunikasi (TIK) dan jaringan telekomunikasi di Indonesia."

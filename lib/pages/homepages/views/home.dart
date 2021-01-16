@@ -5,7 +5,6 @@ import 'package:pramagang/pages/homepages/views/widget/home_searchbycategory.dar
 import 'package:pramagang/pages/homepages/views//widget/home_showrecentchoice.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
-
 class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -51,7 +50,7 @@ class HomeState extends State<StatefulWidget> {
       padding: EdgeInsets.only(top: 10.0),
       child: ListView(
         children: <Widget>[
-          image_carousel,
+          // image_carousel,
           SizedBox(height: 10.0),
           Padding(
             padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
@@ -65,7 +64,7 @@ class HomeState extends State<StatefulWidget> {
             ),
           ),
           SizedBox(height: 20.0),
-          HomeSearchByCategory(),
+          // HomeSearchByCategory(),
           SizedBox(height: 5.0),
           Padding(
             padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),

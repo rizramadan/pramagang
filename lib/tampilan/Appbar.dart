@@ -3,14 +3,9 @@ import 'package:pramagang/tampilan/Navigator.dart';
 import 'package:pramagang/tampilan/warna.dart';
 import 'package:pramagang/tampilan/Drawer.dart';
 
-void main() {
-  runApp(new MaterialApp(
-    title: "My Apps",
-    home: new HomeAppBar(),
-  ));
-}
 
-class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+
+class HomeAppBar extends StatelessWidget  {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +14,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: ColorPalette.primaryDarkColor,
       ),
       drawer: DrawerBar(),
+      bottomNavigationBar: NavigatorBar(),
     );
   }
 
-  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
+  
 }

@@ -3,9 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pramagang/pallete.dart';
 import 'package:pramagang/widgets/widgets.dart';
 import 'package:pramagang/screens/create-new-account.dart';
-import 'package:pramagang/pages/homepages/views/home.dart';
 import 'package:pramagang/tampilan/Drawer.dart';
-import 'package:pramagang/tampilan/Appbar.dart';
+import 'package:pramagang/pages/homepages/views/home.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -13,7 +12,7 @@ class LoginScreen extends StatelessWidget {
     return Stack(
       children: [
         BackgroundImage(
-          image: 'assets/images/nana.png',
+          image: 'assets/images/bg1.jpg',
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
@@ -60,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                       onPressed: () {
                           Navigator.push(
                 context,
-         MaterialPageRoute(builder: (context) => HomeAppBar()
+         MaterialPageRoute(builder: (context) => DrawerBar()
         ),);
         },
                       
