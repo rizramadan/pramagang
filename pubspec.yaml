@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   firebase_auth: ^0.18.4+1
   cloud_firestore: ^0.14.4
+  firebase_core: ^0.5.3
   fluttertoast: ^7.1.5
   flutter_svg: ^0.18.0 # help us to use SVG in our app
   provider: ^4.3.1 # for State management
@@ -38,6 +39,8 @@ dependencies:
   awesome_loader: ^0.0.3
   carousel_pro: ^0.0.13 
   curved_navigation_bar: ^0.3.4
+  device_preview: ^0.4.8
+  flutter_vector_icons: ^0.2.1
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +82,17 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: AquinoDemo
+      fonts:
+        - asset: assets/fonts/AquinoDemo.ttf
+
+    - family: Nisebuschgardens
+      fonts:
+        - asset: assets/fonts/Nisebuschgardens.ttf
+
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/NunitoBold.ttf  
     - family: Muli
       fonts:
         - asset: assets/fonts/muli/Muli.ttf
@@ -86,7 +100,7 @@ flutter:
           weight: 700
         - asset: assets/fonts/muli/Muli-Light.ttf
           weight: 300
-
+        
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

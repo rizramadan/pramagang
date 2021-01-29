@@ -4,15 +4,28 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pramagang/pallete.dart';
 import 'package:pramagang/widgets/widgets.dart';
 import 'package:pramagang/screens/login-screen.dart';
+import 'package:pramagang/pages/homepages/views/home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class CreateNewAccount extends StatelessWidget {
+   final globalkey = GlobalKey<FormState>();
+  var _usernameController = TextEditingController();
+  var _emailController = TextEditingController();
+  var _passwordController = TextEditingController();
+  var _repasswordController = TextEditingController();
+  final auth = FirebaseAuth.instance;
+
+  String _email,_password;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Stack(
+      
       children: [
         BackgroundImage(image: 'assets/images/bg1.jpg'),
         Scaffold(
+          key: globalkey,
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Column(
@@ -65,23 +78,34 @@ class CreateNewAccount extends StatelessWidget {
                 Column(
                   children: [
                     TextInputField(
+                       controller: _usernameController,
                       icon: FontAwesomeIcons.user,
                       hint: 'User',
                       inputType: TextInputType.name,
                       inputAction: TextInputAction.next,
                     ),
                     TextInputField(
+                      controller: _emailController,
                       icon: FontAwesomeIcons.envelope,
                       hint: 'Email',
                       inputType: TextInputType.emailAddress,
                       inputAction: TextInputAction.next,
+                      // onChanged: (value) {
+                      //     _email = value.trim();
+                      // }
+                      
                     ),
                     PasswordInput(
+                     controller: _passwordController,
                       icon: FontAwesomeIcons.lock,
                       hint: 'Password',
                       inputAction: TextInputAction.next,
+                      // onChanged: (value) {
+                      //     _password = value.trim();
+                      // }
                     ),
                     PasswordInput(
+                      controller: _repasswordController,
                       icon: FontAwesomeIcons.lock,
                       hint: 'Confirm Password',
                       inputAction: TextInputAction.done,
@@ -89,10 +113,66 @@ class CreateNewAccount extends StatelessWidget {
                     SizedBox(
                       height: 25,
                     ),
-                    RoundedButton(buttonName: 'Register'),
-                    SizedBox(
-                      height: 30,
-                    ),
+                    RaisedButton(
+                      
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0),
+                      ),
+                      padding: const EdgeInsets.all(0.0),
+                      child: Ink(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color(0xFF13E3D2),
+                              Color(0xFF5D74E2)
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(80.0),
+                          ),
+                        ),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                            minWidth: 150.0,
+                            minHeight: 36.0,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Register',
+                            textAlign: TextAlign.center,
+                            style:kBodyText.copyWith(fontWeight: FontWeight.bold),
+                       
+                            ),
+                       
+                          ),
+                       
+                        ),
+                         onPressed: () async {
+          try {
+            User user = (await FirebaseAuth.instance
+                .createUserWithEmailAndPassword(
+                    email: _emailController.text,
+                    password: _passwordController.text,)).user;
+            if(user != null){
+              user.updateProfile(displayName: _usernameController.text);
+                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
+                           
+    
+                                
+            }
+          } catch (e) {
+            print(e);
+            _usernameController.text = "";
+            _passwordController.text = "";
+            _repasswordController.text = "";
+            _emailController.text = "";
+            // TODO: alertdialog with error
+          }
+        },  
+                      
+        
+                               ),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

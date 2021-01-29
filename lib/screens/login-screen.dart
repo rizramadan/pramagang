@@ -4,9 +4,18 @@ import 'package:pramagang/pallete.dart';
 import 'package:pramagang/widgets/widgets.dart';
 import 'package:pramagang/screens/create-new-account.dart';
 import 'package:pramagang/tampilan/Drawer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:async/async.dart';
 import 'package:pramagang/pages/homepages/views/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatelessWidget {
+  
+    final globalkey = GlobalKey<FormState>();
+  var _emailController = TextEditingController();
+  var _passwordController = TextEditingController();
+  final auth = FirebaseAuth.instance;
+  String _email,_password;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -15,6 +24,7 @@ class LoginScreen extends StatelessWidget {
           image: 'assets/images/bg1.jpg',
         ),
         Scaffold(
+          key: globalkey,
           backgroundColor: Colors.transparent,
           body: Column(
             children: [
@@ -33,15 +43,23 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   TextInputField(
+                    controller: _emailController,
                     icon: FontAwesomeIcons.envelope,
                     hint: 'Email',
                     inputType: TextInputType.emailAddress,
                     inputAction: TextInputAction.next,
+                    //  onChanged: (value) {
+                    //       _email = value.trim();
+                    //   }
                   ),
                   PasswordInput(
+                   controller: _passwordController,
                     icon: FontAwesomeIcons.lock,
-                    hint: 'Password',
+                    hint: 'Password',  
                     inputAction: TextInputAction.done,
+                    //  onChanged: (value) {
+                    //       _password = value.trim();
+                    //   }
                   ),
                   GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
@@ -56,12 +74,7 @@ class LoginScreen extends StatelessWidget {
            ],
               ),
              RaisedButton(
-                      onPressed: () {
-                          Navigator.push(
-                context,
-         MaterialPageRoute(builder: (context) => DrawerBar()
-        ),);
-        },
+         
                       
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0),
@@ -92,10 +105,30 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
-                      
-                
-              
+                  
+                          onPressed: () async {
+          try {
+            User user =
+                (await FirebaseAuth.instance.signInWithEmailAndPassword(
+              email: _emailController.text,
+              password: _passwordController.text,
+            ))
+                    .user;
+            if (user != null) {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.setString('displayName', user.displayName);
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+            }
+          } catch (e) {
+            print(e);
+            _emailController.text = "";
+            _passwordController.text = "";
+            // TODO: AlertDialog with error
+          }
+        },
+        
+                               ),
+
               GestureDetector(
                 onTap: () {
                   Navigator.push(

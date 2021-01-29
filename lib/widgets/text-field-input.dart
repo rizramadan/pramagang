@@ -2,19 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:pramagang/pallete.dart';
 
 class TextInputField extends StatelessWidget {
+  
   const TextInputField({
     Key key,
     @required this.icon,
     @required this.hint,
     this.inputType,
     this.inputAction,
+    this.controller,
+    this.onChanged,
+    
   }) : super(key: key);
 
   final IconData icon;
   final String hint;
   final TextInputType inputType;
   final TextInputAction inputAction;
-
+  final TextEditingController controller;
+  final Function(String) onChanged;
+  
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,6 +35,7 @@ class TextInputField extends StatelessWidget {
         ),
         child: Center(
           child: TextField(
+            controller: controller,
             decoration: InputDecoration(
               border: InputBorder.none,
               prefixIcon: Padding(
@@ -45,6 +52,7 @@ class TextInputField extends StatelessWidget {
             style: kBodyText,
             keyboardType: inputType,
             textInputAction: inputAction,
+            onChanged: onChanged,    
           ),
         ),
       ),

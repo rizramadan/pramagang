@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pramagang/screens/login-screen.dart';
+import 'package:pramagang/screens/login_page.dart';
+import 'package:pramagang/screens/register_page.dart';
+import 'package:pramagang/tampilan/auth_screen_view.dart';
 import 'dart:async';
 
 class SplashScreenPage extends StatefulWidget {
@@ -19,7 +22,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (ctx) => LoginScreen(),
+            builder: (ctx) => AuthScreenView(),
           ));
     });
 

@@ -3,17 +3,23 @@ import 'package:pramagang/pallete.dart';
 
 class PasswordInput extends StatelessWidget {
   const PasswordInput({
-    Key key,
+   Key key,
     @required this.icon,
     @required this.hint,
     this.inputType,
     this.inputAction,
+    this.controller,
+    this.onChanged,
+    
+
   }) : super(key: key);
 
   final IconData icon;
   final String hint;
   final TextInputType inputType;
   final TextInputAction inputAction;
+  final TextEditingController controller;
+  final Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +35,7 @@ class PasswordInput extends StatelessWidget {
         ),
         child: Center(
           child: TextField(
+             controller: controller,
             decoration: InputDecoration(
               border: InputBorder.none,
               prefixIcon: Padding(
@@ -46,6 +53,7 @@ class PasswordInput extends StatelessWidget {
             style: kBodyText,
             keyboardType: inputType,
             textInputAction: inputAction,
+            onChanged: onChanged, 
           ),
         ),
       ),
