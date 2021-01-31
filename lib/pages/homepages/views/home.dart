@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pramagang/pages/homepages/utils/color_utils.dart';
 import 'package:pramagang/pages/homepages/utils/string_utils.dart';
-import 'package:pramagang/pages/homepages/views/widget/home_searchbycategory.dart';
-import 'package:pramagang/pages/homepages/views//widget/home_showrecentchoice.dart';
+import 'package:pramagang/tampilan/Appbar.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:pramagang/pages/homepages/views/home_shopbycategory.dart';
+import 'package:pramagang/pages/homepages/views/home_recentorders.dart';
+import 'package:pramagang/pages/homepages/utils/constant.dart';
+import 'package:pramagang/pages/homepages/views/show/showscreen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -23,7 +26,10 @@ class HomeState extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(backgroundColor: ColorsUtils.HomeBgColor, body: showBody());
+    return Scaffold(
+        backgroundColor: ColorsUtils.HomeBgColor,
+        appBar: AppBar(),
+        body: showBody());
   }
 
   Widget image_carousel = new Container(
@@ -31,11 +37,11 @@ class HomeState extends State<StatefulWidget> {
     child: new Carousel(
       boxFit: BoxFit.cover,
       images: [
-        AssetImage('assets/homeimage/offer/Offer1.jpg'),
-        AssetImage('assets/homeimage/offer/Offer2.jpg'),
-        AssetImage('assets/homeimage/offer/Offer3.jpg'),
-        AssetImage('assets/homeimage/offer/Offer4.jpg'),
-        AssetImage('assets/homeimage/offer/Offer5.jpg'),
+        AssetImage('assets/offer/offer1.jpg'),
+        AssetImage('assets/offer/offer2.jpg'),
+        AssetImage('assets/offer/offer3.jpg'),
+        AssetImage('assets/offer/offer4.jpg'),
+        AssetImage('assets/offer/offer5.jpg'),
       ],
       autoplay: true,
       animationCurve: Curves.fastLinearToSlowEaseIn,
@@ -50,7 +56,7 @@ class HomeState extends State<StatefulWidget> {
       padding: EdgeInsets.only(top: 10.0),
       child: ListView(
         children: <Widget>[
-          // image_carousel,
+          image_carousel,
           SizedBox(height: 10.0),
           Padding(
             padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
@@ -64,7 +70,7 @@ class HomeState extends State<StatefulWidget> {
             ),
           ),
           SizedBox(height: 20.0),
-          // HomeSearchByCategory(),
+          HomeShopByCategory(),
           SizedBox(height: 5.0),
           Padding(
             padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
@@ -80,7 +86,12 @@ class HomeState extends State<StatefulWidget> {
                       fontWeight: FontWeight.w700),
                 ),
                 FlatButton(
-                    onPressed: _showAllBtnTapped,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ShowScreen()));
+                    },
                     child: Text(
                       StringUtils.Show_All,
                       style: TextStyle(
@@ -92,7 +103,7 @@ class HomeState extends State<StatefulWidget> {
               ],
             ),
           ),
-          HomeShowRecentChoice(),
+          ServiceCards(),
         ],
       ),
     );

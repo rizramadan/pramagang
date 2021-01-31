@@ -1,4 +1,4 @@
-name: pramagang
+name: pramagang 
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -60,11 +60,75 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    
+    - assets/category/
+    - assets/asing/
+    - assets/BUMN/
+    - assets/offer/
+    - assets/swasta/
+    - assets/asing/danone.jpg
+    - assets/asing/danonea.jpg
+    - assets/asing/danoneb.jpg
+    - assets/asing/danonec.jpg
+    - assets/asing/honda.jpg
+    - assets/asing/hondaa.jpg
+    - assets/asing/hondab.jpg
+    - assets/asing/hondac.jpg
+    - assets/asing/samsung.jpg
+    - assets/asing/samsunga.jpg
+    - assets/asing/samsungb.jpg
+    - assets/asing/samsungc.jpg
+    - assets/asing/toyota.jpg
+    - assets/asing/toyotaa.jpg
+    - assets/asing/toyotab.jpg
+    - assets/asing/toyotac.jpg
+    - assets/asing/unilever.jpg
+    - assets/asing/unilevera.jpg
+    - assets/asing/unileverb.jpg
+    - assets/asing/unileverc.jpg
+    - assets/BUMN/biofarma.jpg
+    - assets/BUMN/biofarmaa.jpg
+    - assets/BUMN/biofarmab.jpg
+    - assets/BUMN/biofarmac.jpg
+    - assets/BUMN/bni.jpg
+    - assets/BUMN/bnia.jpg
+    - assets/BUMN/bnib.jpg
+    - assets/BUMN/bnic.jpg
+    - assets/BUMN/kai.jpg
+    - assets/BUMN/kaia.jpg
+    - assets/BUMN/kaib.jpg
+    - assets/BUMN/kaic.jpg
+    - assets/BUMN/pln.jpg
+    - assets/BUMN/plna.jpg
+    - assets/BUMN/plnb.jpg
+    - assets/BUMN/plnc.jpg
+    - assets/BUMN/telkom.jpg
+    - assets/BUMN/telkoma.jpg
+    - assets/BUMN/telkomb.jpg
+    - assets/BUMN/telkomc.jpg
+    - assets/swasta/astra.jpg
+    - assets/swasta/astraa.jpg
+    - assets/swasta/astrab.jpg
+    - assets/swasta/astrac.jpg
+    - assets/swasta/bca.jpg
+    - assets/swasta/bcaa.jpg
+    - assets/swasta/bcab.jpg
+    - assets/swasta/bcac.jpg
+    - assets/swasta/gudanggaram.jpg
+    - assets/swasta/gudanggarama.jpg
+    - assets/swasta/gudanggaramb.jpg
+    - assets/swasta/gudanggaramc.jpg
+    - assets/swasta/indocement.jpg
+    - assets/swasta/indocementa.jpg
+    - assets/swasta/indocementb.jpg
+    - assets/swasta/indocementc.jpg
+    - assets/swasta/indofood.jpg
+    - assets/swasta/indofooda.jpg
+    - assets/swasta/indofoodb.jpg
+    - assets/swasta/indofoodc.jpg
 
-   - assets/homeimage/category/
-   - assets/homeimage/BUMN/
-   - assets/homeimage/swasta/
-   - assets/homeimage/asing/
+
+
 
    - assets/images/
   #   - images/a_dot_burr.jpeg

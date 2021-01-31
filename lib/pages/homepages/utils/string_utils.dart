@@ -5,7 +5,7 @@ class StringUtils {
   // Labels
 
   static final Home = "Home";
-  static final SearchByCategory = "Search by Category";
-  static final Your_Choice = "Your Choice";
+  static final SearchByCategory = "Category";
+  static final Your_Choice = "Choose your companies";
   static final Show_All = "Show All >";
 }
