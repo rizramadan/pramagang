@@ -9,6 +9,9 @@ class Item {
   String directors;
   String runtime;
   String desc;
+  String kriteria;
+  String waktu;
+  String divisi;
   double rating;
   String imageUrl;
   String bannerUrl;
@@ -25,6 +28,9 @@ class Item {
     @required this.releaseDateDesc,
     @required this.runtime,
     @required this.desc,
+    @required this.kriteria,
+    @required this.waktu,
+    @required this.divisi,
     @required this.rating,
     @required this.imageUrl,
     @required this.bannerUrl,
