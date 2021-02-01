@@ -1,14 +1,19 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pramagang/pages/homepages/models/item.dart';
 import 'package:pramagang/pages/homepages/utils/getrating.dart';
+import 'package:pramagang/service/firestore_service.dart';
+import 'package:provider/provider.dart';
 
 class GridItemDetails extends StatelessWidget {
   final Item item;
-
+  User user;
   GridItemDetails(this.item);
 
   @override
   Widget build(BuildContext context) {
+    user = Provider.of<User>(context);
     return Scaffold(
       primary: true,
       appBar: AppBar(
@@ -29,27 +34,53 @@ class GridItemDetails extends StatelessWidget {
               ),
             ),
           ),
-          InkWell(
-            onTap: () => {},
-            child: Container(
-              margin: EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
-              width: 80.0,
-              height: 40.0,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-              child: Center(
-                child: Text(
-                  'LAMAR MAGANG',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    color: Color(0xFF761322),
-                    fontWeight: FontWeight.bold,
+          Row(
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () => {},
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
+                    width: 80.0,
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'LAMAR MAGANG',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          color: Color(0xFF761322),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+              Container(
+                margin: EdgeInsets.only(right: 40),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                  ),
+                  onPressed: () async {
+                    await Fireservice.addFavotire(user.uid, item);
+                    Fluttertoast.showToast(
+                        msg: "Berhasil di tambahkan ke Favorite",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.white,
+                        fontSize: 16.0);
+                  },
+                ),
+              ),
+            ],
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 10.0),

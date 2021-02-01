@@ -1,4 +1,4 @@
-name: pramagang 
+name: pramagang
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -23,33 +23,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
-  firebase_auth: ^0.18.4+1
-  cloud_firestore: ^0.14.4
-  firebase_core: ^0.5.3
-  fluttertoast: ^7.1.5
-  flutter_svg: ^0.18.0 # help us to use SVG in our app
-  provider: ^4.3.1 # for State management
-  font_awesome_flutter: ^8.10.0
-  google_fonts: ^1.1.1
   awesome_loader: ^0.0.3
-  carousel_pro: ^0.0.13 
+  carousel_pro: ^0.0.13
+  cloud_firestore: ^0.14.4
+  cupertino_icons: ^1.0.0
   curved_navigation_bar: ^0.3.4
   device_preview: ^0.4.8
+  firebase_auth: ^0.18.4+1
+  firebase_core: ^0.5.3
+  flutter_svg: ^0.18.0
   flutter_vector_icons: ^0.2.1
+  fluttertoast: ^7.1.6
+  font_awesome_flutter: ^8.10.0
+  google_fonts: ^1.1.1
+  provider: ^4.3.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -60,86 +54,18 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/ 
     - assets/category/
     - assets/asing/
     - assets/BUMN/
     - assets/offer/
     - assets/swasta/
-    - assets/asing/danone.jpg
-    - assets/asing/danonea.jpg
-    - assets/asing/danoneb.jpg
-    - assets/asing/danonec.jpg
-    - assets/asing/honda.jpg
-    - assets/asing/hondaa.jpg
-    - assets/asing/hondab.jpg
-    - assets/asing/hondac.jpg
-    - assets/asing/samsung.jpg
-    - assets/asing/samsunga.jpg
-    - assets/asing/samsungb.jpg
-    - assets/asing/samsungc.jpg
-    - assets/asing/toyota.jpg
-    - assets/asing/toyotaa.jpg
-    - assets/asing/toyotab.jpg
-    - assets/asing/toyotac.jpg
-    - assets/asing/unilever.jpg
-    - assets/asing/unilevera.jpg
-    - assets/asing/unileverb.jpg
-    - assets/asing/unileverc.jpg
-    - assets/BUMN/biofarma.jpg
-    - assets/BUMN/biofarmaa.jpg
-    - assets/BUMN/biofarmab.jpg
-    - assets/BUMN/biofarmac.jpg
-    - assets/BUMN/bni.jpg
-    - assets/BUMN/bnia.jpg 
-    - assets/BUMN/bnib.jpg
-    - assets/BUMN/bnic.jpg
-    - assets/BUMN/kai.jpg
-    - assets/BUMN/kaia.jpg
-    - assets/BUMN/kaib.jpg 
-    - assets/BUMN/kaic.jpg
-    - assets/BUMN/pln.jpg
-    - assets/BUMN/plna.jpg
-    - assets/BUMN/plnb.jpg
-    - assets/BUMN/plnc.jpg
-    - assets/BUMN/telkom.jpg
-    - assets/BUMN/telkoma.jpg
-    - assets/BUMN/telkomb.jpg
-    - assets/BUMN/telkomc.jpg
-    - assets/swasta/astra.jpg
-    - assets/swasta/astraa.jpg
-    - assets/swasta/astrab.jpg
-    - assets/swasta/astrac.jpg
-    - assets/swasta/bca.jpg
-    - assets/swasta/bcaa.jpg
-    - assets/swasta/bcab.jpg
-    - assets/swasta/bcac.jpg
-    - assets/swasta/gudanggaram.jpg
-    - assets/swasta/gudanggarama.jpg
-    - assets/swasta/gudanggaramb.jpg
-    - assets/swasta/gudanggaramc.jpg
-    - assets/swasta/indocement.jpg
-    - assets/swasta/indocementa.jpg
-    - assets/swasta/indocementb.jpg
-    - assets/swasta/indocementc.jpg
-    - assets/swasta/indofood.jpg
-    - assets/swasta/indofooda.jpg
-    - assets/swasta/indofoodb.jpg
-    - assets/swasta/indofoodc.jpg
-
-
-
-
-   
+    - assets/images/
   #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
+  #   - images/a_dot_ham.jpegg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -156,7 +82,7 @@ flutter:
 
     - family: Nunito
       fonts:
-        - asset: assets/fonts/NunitoBold.ttf  
+        - asset: assets/fonts/NunitoBold.ttf
     - family: Muli
       fonts:
         - asset: assets/fonts/muli/Muli.ttf
@@ -164,7 +90,6 @@ flutter:
           weight: 700
         - asset: assets/fonts/muli/Muli-Light.ttf
           weight: 300
-        
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

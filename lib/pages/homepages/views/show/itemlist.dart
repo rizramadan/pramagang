@@ -26,6 +26,7 @@ class ItemList extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             AspectRatio(
               aspectRatio: 18.0 / 12.0,
