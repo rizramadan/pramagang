@@ -8,7 +8,6 @@ class NavigatorBar extends StatefulWidget {
 }
 
 class _NavigatorBarState extends State<NavigatorBar> {
-  
   int _selectedNavbar = 0;
 
   void _changeSelectedNavBar(int index) {
@@ -40,7 +39,7 @@ class _NavigatorBarState extends State<NavigatorBar> {
           ),
         ],
         currentIndex: _selectedNavbar,
-        selectedItemColor: Colors.green,
+        selectedItemColor: ColorPalette.primaryDarkColor,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         onTap: _changeSelectedNavBar,

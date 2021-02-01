@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pramagang/screens/editdatadiri.dart';
+import 'package:pramagang/screens/datadiri.dart';
+import 'package:pramagang/screens/login_page.dart';
+import 'package:pramagang/screens/nilaimagang.dart';
 import 'package:pramagang/tampilan/warna.dart';
 import 'package:pramagang/pages/homepages/views/home.dart';
 import 'package:pramagang/pages/homepages/views/favorite.dart';
@@ -6,11 +10,13 @@ import 'package:pramagang/pages/homepages/views/list.dart';
 import 'package:pramagang/pages/homepages/views/search.dart';
 import 'package:pramagang/screens/ProfileScreen.dart';
 import 'package:pramagang/screens/setting.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; 
-import 'package:firebase_auth/firebase_auth.dart'; 
-import 'package:pramagang/service/user_model.dart'; 
-import 'package:pramagang/service/auth.dart'; 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pramagang/service/user_model.dart';
+import 'package:pramagang/service/auth.dart';
 import 'package:provider/provider.dart';
+
+import 'auth_screen_view.dart';
 
 class DrawerBar extends StatefulWidget {
   @override
@@ -18,56 +24,52 @@ class DrawerBar extends StatefulWidget {
 }
 
 class _DrawerBarState extends State<DrawerBar> {
-  var pages = [Home(),FavoritePage(),ListPage(),SearchPage()];
+  var pages = [Home(), FavoritePage(), ListPage(), SearchPage()];
   var _selectedNavbar = 0;
   void _changeSelectedNavBar(int index) {
     setState(() {
       _selectedNavbar = index;
     });
   }
-   FirebaseAuth auth = FirebaseAuth.instance; 
-  final userRef = FirebaseFirestore.instance.collection("users"); 
-  UserModel _currentUser; 
-  
-  String _uid; 
-  String _username; 
-  String _email; 
-   @override 
-  void initState() { 
-    // TODO: implement initState 
-    super.initState(); 
-    getCurrentUser(); 
-  } 
-  
-  getCurrentUser() async { 
-    UserModel currentUser = await context 
-        .read<AuthenticationService>() 
-        .getUserFromDB(uid: auth.currentUser.uid); 
-  
-    _currentUser = currentUser; 
-  
-    print("${_currentUser.username}"); 
-  
-    setState(() { 
-      _uid = _currentUser.uid; 
-      _username = _currentUser.username; 
-      _email = _currentUser.email; 
-    }); 
-  } 
-  
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  final userRef = FirebaseFirestore.instance.collection("users");
+  UserModel _currentUser;
+
+  String _uid;
+  String _username;
+  String _email;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentUser();
+  }
+
+  getCurrentUser() async {
+    UserModel currentUser = await context
+        .read<AuthenticationService>()
+        .getUserFromDB(uid: auth.currentUser.uid);
+
+    _currentUser = currentUser;
+
+    print("${_currentUser.username}");
+
+    setState(() {
+      _uid = _currentUser.uid;
+      _username = _currentUser.username;
+      _email = _currentUser.email;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body:  _currentUser == null 
-          ? Center(child: CircularProgressIndicator()) 
-          :
-       pages[_selectedNavbar],
-        
+      body: _currentUser == null
+          ? Center(child: CircularProgressIndicator())
+          : pages[_selectedNavbar],
       appBar: AppBar(
-        title: Text(
-          'PRAMAGANG'
-          ),
+        title: Text('PRAMAGANG'),
         backgroundColor: ColorPalette.primaryDarkColor,
       ),
       drawer: Drawer(
@@ -102,7 +104,7 @@ class _DrawerBarState extends State<DrawerBar> {
                     ),
                   ),
                   Text(
-                     "Hi ${_username}",
+                    "Hi ${_username}",
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -112,13 +114,12 @@ class _DrawerBarState extends State<DrawerBar> {
             ),
             ListTile(
               leading: Icon(Icons.person),
-               onTap: () {
-                          Navigator.push(
-                context,
-         MaterialPageRoute(builder: (context) => ProfileScreen()
-        ),);
-        },
-        
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                );
+              },
               title: Text(
                 'Profile',
                 style: TextStyle(
@@ -128,6 +129,12 @@ class _DrawerBarState extends State<DrawerBar> {
             ),
             ListTile(
               leading: Icon(Icons.info),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DataDiriPage()),
+                );
+              },
               title: Text(
                 'Data Diri',
                 style: TextStyle(
@@ -137,6 +144,12 @@ class _DrawerBarState extends State<DrawerBar> {
             ),
             ListTile(
               leading: Icon(Icons.announcement_outlined),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NilaiMagangPage()),
+                );
+              },
               title: Text(
                 'Nilai Magang',
                 style: TextStyle(
@@ -145,12 +158,12 @@ class _DrawerBarState extends State<DrawerBar> {
               ),
             ),
             ListTile(
-               onTap: () {
-                          Navigator.push(
-                context,
-         MaterialPageRoute(builder: (context) => SettingsOnePage()
-        ),);
-        },
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsOnePage()),
+                );
+              },
               leading: Icon(Icons.settings),
               title: Text(
                 'Setting',
@@ -167,11 +180,16 @@ class _DrawerBarState extends State<DrawerBar> {
                   fontSize: 15,
                 ),
               ),
-              onTap: () {},
+              onTap: () async {
+                await context.read<AuthenticationService>().signOut();
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => AuthScreenView()),
+                    (context) => false);
+              },
             ),
           ],
         ),
-     
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -198,7 +216,6 @@ class _DrawerBarState extends State<DrawerBar> {
         showUnselectedLabels: true,
         onTap: _changeSelectedNavBar,
       ),
-  
     );
     Expanded(
       child: Container(
@@ -224,7 +241,6 @@ class _DrawerBarState extends State<DrawerBar> {
                   fontWeight: FontWeight.bold,
                   color: Colors.grey),
             ),
-         
           ],
         ),
       ),

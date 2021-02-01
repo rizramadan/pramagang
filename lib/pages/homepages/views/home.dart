@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pramagang/pages/homepages/utils/color_utils.dart';
 import 'package:pramagang/pages/homepages/utils/string_utils.dart';
-import 'package:pramagang/tampilan/Appbar.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:pramagang/pages/homepages/views/home_shopbycategory.dart';
 import 'package:pramagang/pages/homepages/views/home_recentorders.dart';
@@ -26,9 +25,7 @@ class HomeState extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-        backgroundColor: ColorsUtils.HomeBgColor,
-        body: showBody());
+    return Scaffold(backgroundColor: ColorsUtils.HomeBgColor, body: showBody());
   }
 
   Widget image_carousel = new Container(
@@ -107,5 +104,4 @@ class HomeState extends State<StatefulWidget> {
       ),
     );
   }
-
 }
