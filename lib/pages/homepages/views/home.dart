@@ -28,7 +28,6 @@ class HomeState extends State<StatefulWidget> {
     // TODO: implement build
     return Scaffold(
         backgroundColor: ColorsUtils.HomeBgColor,
-        appBar: AppBar(),
         body: showBody());
   }
 
@@ -109,5 +108,4 @@ class HomeState extends State<StatefulWidget> {
     );
   }
 
-  Widget _showAllBtnTapped() {}
 }

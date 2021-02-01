@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pramagang/screens/login-screen.dart';
 import 'package:pramagang/screens/login_page.dart';
 import 'package:pramagang/screens/register_page.dart';
 import 'package:pramagang/tampilan/auth_screen_view.dart';
@@ -18,14 +17,13 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   }
 
   startSplashScreen() async {
-   Timer(Duration(milliseconds: 2500), () {
+    Timer(Duration(milliseconds: 2500), () {
       Navigator.push(
           context,
           MaterialPageRoute(
             builder: (ctx) => AuthScreenView(),
           ));
     });
-
   }
 
   @override
