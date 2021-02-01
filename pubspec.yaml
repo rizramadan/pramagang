@@ -60,7 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    
+    - assets/images/ 
     - assets/category/
     - assets/asing/
     - assets/BUMN/
@@ -91,12 +91,12 @@ flutter:
     - assets/BUMN/biofarmab.jpg
     - assets/BUMN/biofarmac.jpg
     - assets/BUMN/bni.jpg
-    - assets/BUMN/bnia.jpg
+    - assets/BUMN/bnia.jpg 
     - assets/BUMN/bnib.jpg
     - assets/BUMN/bnic.jpg
     - assets/BUMN/kai.jpg
     - assets/BUMN/kaia.jpg
-    - assets/BUMN/kaib.jpg
+    - assets/BUMN/kaib.jpg 
     - assets/BUMN/kaic.jpg
     - assets/BUMN/pln.jpg
     - assets/BUMN/plna.jpg
@@ -130,7 +130,7 @@ flutter:
 
 
 
-   - assets/images/
+   
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
