@@ -68,7 +68,7 @@ class _EditDataDiriPageState extends State<EditDataDiriPage> {
                   decoration: new InputDecoration(
                     hintText: "Masukan Npm Anda",
                     labelText: "Npm",
-                    icon: Icon(Icons.account_box_outlined),
+                    icon: Icon(Icons.account_box),
                     border: OutlineInputBorder(
                         borderRadius: new BorderRadius.circular(5.0)),
                   ),
@@ -106,7 +106,7 @@ class _EditDataDiriPageState extends State<EditDataDiriPage> {
                   decoration: new InputDecoration(
                     hintText: "Masukan Jurusan Anda",
                     labelText: "Jurusan",
-                    icon: Icon(Icons.home_work),
+                    icon: Icon(Icons.home),
                     border: OutlineInputBorder(
                         borderRadius: new BorderRadius.circular(5.0)),
                   ),

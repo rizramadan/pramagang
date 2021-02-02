@@ -24,7 +24,7 @@ class DrawerBar extends StatefulWidget {
 }
 
 class _DrawerBarState extends State<DrawerBar> {
-  var pages = [Home(), FavoritePage(), ListPage(), SearchPage()];
+  var pages = [Home(), FavoritePage(), ListPage()];
   var _selectedNavbar = 0;
   void _changeSelectedNavBar(int index) {
     setState(() {
@@ -143,7 +143,7 @@ class _DrawerBarState extends State<DrawerBar> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.announcement_outlined),
+              leading: Icon(Icons.announcement),
               onTap: () {
                 Navigator.push(
                   context,
@@ -173,7 +173,7 @@ class _DrawerBarState extends State<DrawerBar> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.logout),
+              leading: Icon(Icons.exit_to_app),
               title: Text(
                 'Logout',
                 style: TextStyle(
@@ -204,10 +204,6 @@ class _DrawerBarState extends State<DrawerBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.mail),
             title: Text('Notification'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text('Search'),
           ),
         ],
         currentIndex: _selectedNavbar,

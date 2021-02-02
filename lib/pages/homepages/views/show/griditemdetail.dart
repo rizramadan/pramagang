@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pramagang/pages/homepages/models/item.dart';
 import 'package:pramagang/pages/homepages/utils/getrating.dart';
 import 'package:pramagang/service/firestore_service.dart';
+import 'package:pramagang/tampilan/warna.dart';
 import 'package:provider/provider.dart';
 
 class GridItemDetails extends StatelessWidget {
@@ -17,6 +18,7 @@ class GridItemDetails extends StatelessWidget {
     return Scaffold(
       primary: true,
       appBar: AppBar(
+        backgroundColor: ColorPalette.primaryDarkColor,
         title: Text(item.name),
       ),
       backgroundColor: Color(0xFF761322),
@@ -38,7 +40,17 @@ class GridItemDetails extends StatelessWidget {
             children: [
               Expanded(
                 child: InkWell(
-                  onTap: () => {},
+                  onTap: () async {
+                    await Fireservice.addLamaran(user.uid, item);
+                    Fluttertoast.showToast(
+                        msg: "Berhasil di tambahkan ke daftar lamaran",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.white,
+                        fontSize: 16.0);
+                  },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(50.0, 5.0, 50.0, 5.0),
                     width: 80.0,

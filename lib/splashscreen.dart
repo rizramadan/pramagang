@@ -18,7 +18,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
   startSplashScreen() async {
     Timer(Duration(milliseconds: 2500), () {
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (ctx) => AuthScreenView(),

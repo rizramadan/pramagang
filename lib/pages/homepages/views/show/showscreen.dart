@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pramagang/pages/homepages/models/item.dart';
 import 'package:pramagang/pages/homepages/views/show/itemlist.dart';
+import 'package:pramagang/tampilan/warna.dart';
 
 class ShowScreen extends StatelessWidget {
   List<Item> itemList;
@@ -10,6 +11,10 @@ class ShowScreen extends StatelessWidget {
     itemList = _itemList();
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Perusahaan"),
+        backgroundColor: ColorPalette.primaryDarkColor,
+      ),
       body: _gridView(),
     );
   }
@@ -187,8 +192,8 @@ class ShowScreen extends StatelessWidget {
         runtime: '80 Lowongan',
         bannerUrl: 'assets/BUMN/bni.jpg',
         imageUrl: 'assets/BUMN/bni.jpg',
-        trailerImg1: 'assets/BUMN/bnia.jpeg',
-        trailerImg2: 'assets/BUMN/bnib.jpeg',
+        trailerImg1: 'assets/BUMN/bnia.jpg',
+        trailerImg2: 'assets/BUMN/bnib.jpg',
         trailerImg3: 'assets/BUMN/bnic.jpg',
       ),
       Item(

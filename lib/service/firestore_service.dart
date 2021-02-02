@@ -5,6 +5,8 @@ import 'package:pramagang/pages/homepages/models/item.dart';
 
 class Fireservice {
   static var _userCollection = FirebaseFirestore.instance.collection('users');
+  static var _lamaranCollection =
+      FirebaseFirestore.instance.collection('lamaran');
   static Future<void> updateProfile(String id, String profile) async {
     await _userCollection.doc(id).set({
       "profile": profile,
@@ -58,6 +60,36 @@ class Fireservice {
       "trailerImg1": item.trailerImg1,
       "trailerImg2": item.trailerImg2,
       "trailerImg3": item.trailerImg3,
+      "kriteria": item.kriteria,
+      "waktu": item.waktu,
+      "divisi": item.divisi,
     });
+  }
+
+  static Future<void> addLamaran(String id, Item item) async {
+    _lamaranCollection.doc().set({
+      "user_id": id,
+      "id": item.id,
+      "name": item.name,
+      "category": item.category,
+      "desc": item.desc,
+      "rating": item.rating,
+      "directors": item.directors,
+      "releaseDate": item.releaseDate,
+      "releaseDateDesc": item.releaseDateDesc,
+      "runtime": item.runtime,
+      "bannerUrl": item.bannerUrl,
+      "imageUrl": item.imageUrl,
+      "trailerImg1": item.trailerImg1,
+      "trailerImg2": item.trailerImg2,
+      "trailerImg3": item.trailerImg3,
+      "kriteria": item.kriteria,
+      "waktu": item.waktu,
+      "divisi": item.divisi,
+    });
+  }
+
+  static Stream<QuerySnapshot> getLamaran(String id) {
+    return _lamaranCollection.where("user_id", isEqualTo: id).snapshots();
   }
 }
