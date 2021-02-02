@@ -8,7 +8,7 @@ class ShowScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    itemList = _itemList();
+    itemList = listPerusahaan();
 
     return Scaffold(
       appBar: AppBar(
@@ -32,7 +32,7 @@ class ShowScreen extends StatelessWidget {
     );
   }
 
-  List<Item> _itemList() {
+  List<Item> listPerusahaan() {
     return [
       Item(
         id: 0,

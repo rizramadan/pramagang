@@ -39,6 +39,7 @@ class _DrawerBarState extends State<DrawerBar> {
   String _uid;
   String _username;
   String _email;
+  String _image;
   @override
   void initState() {
     // TODO: implement initState
@@ -56,6 +57,7 @@ class _DrawerBarState extends State<DrawerBar> {
     print("${_currentUser.username}");
 
     setState(() {
+      _image = _currentUser.image;
       _uid = _currentUser.uid;
       _username = _currentUser.username;
       _email = _currentUser.email;
@@ -90,9 +92,11 @@ class _DrawerBarState extends State<DrawerBar> {
                       bottom: 10,
                     ),
                     decoration: BoxDecoration(
+                      shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: NetworkImage(
-                              'https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png'),
+                          image: NetworkImage(_image != null
+                              ? _image
+                              : 'https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png'),
                           fit: BoxFit.fill),
                     ),
                   ),
