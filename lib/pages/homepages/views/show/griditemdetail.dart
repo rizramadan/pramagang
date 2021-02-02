@@ -21,7 +21,7 @@ class GridItemDetails extends StatelessWidget {
         backgroundColor: ColorPalette.primaryDarkColor,
         title: Text(item.name),
       ),
-      backgroundColor: Color(0xFF761322),
+      backgroundColor: ColorPalette.primaryDarkColor,
       body: ListView(
         children: <Widget>[
           HeaderBanner(this.item),
@@ -34,6 +34,42 @@ class GridItemDetails extends StatelessWidget {
                 fontSize: 13.0,
                 color: Colors.white,
               ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(20, 0, 20, 10),
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.white,
+                width: 2,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "- ${item.kriteria}",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  maxLines: 3,
+                ),
+                Text(
+                  "- ${item.divisi}",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  maxLines: 3,
+                ),
+                Text(
+                  "- ${item.waktu}",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  maxLines: 3,
+                ),
+              ],
             ),
           ),
           Row(
@@ -64,7 +100,7 @@ class GridItemDetails extends StatelessWidget {
                         'LAMAR MAGANG',
                         style: TextStyle(
                           fontSize: 18.0,
-                          color: Color(0xFF761322),
+                          color: ColorPalette.primaryDarkColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -97,7 +133,7 @@ class GridItemDetails extends StatelessWidget {
           Container(
             padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 10.0),
             child: Text(
-              'Maret 2021',
+              'Office',
               style: TextStyle(
                 fontSize: 16.0,
                 color: Colors.white,
@@ -135,7 +171,7 @@ class GetTags extends StatelessWidget {
                 right: 5.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF761322),
+                color: ColorPalette.primaryDarkColor,
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -157,7 +193,7 @@ class GetTags extends StatelessWidget {
                 right: 5.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF761322),
+                color: ColorPalette.primaryDarkColor,
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -179,7 +215,7 @@ class GetTags extends StatelessWidget {
                 right: 5.0,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF761322),
+                color: ColorPalette.primaryDarkColor,
                 border: Border.all(color: Colors.white, width: 1.0),
                 borderRadius: BorderRadius.circular(30.0),
               ),
