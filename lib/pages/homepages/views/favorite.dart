@@ -12,7 +12,8 @@ class FavoritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     user = Provider.of<User>(context);
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+      child: Column(
         children: [
           Align(
             alignment: Alignment.centerLeft,
@@ -70,6 +71,7 @@ class FavoritePage extends StatelessWidget {
           ),
         ],
       ),
+    )
     );
   }
 }
