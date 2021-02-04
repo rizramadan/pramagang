@@ -1,6 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pramagang/service/user_model.dart';
+import 'package:pramagang/service/auth.dart';
+import 'package:provider/provider.dart';
+import 'package:pramagang/splashscreen.dart';
 
 class SettingsOnePage extends StatefulWidget {
   static final String path = "lib/screens/setting.dart";
@@ -11,12 +17,39 @@ class SettingsOnePage extends StatefulWidget {
 
 class _SettingsOnePageState extends State<SettingsOnePage> {
   bool _dark;
+FirebaseAuth auth = FirebaseAuth.instance;
+  final userRef = FirebaseFirestore.instance.collection("users");
+  UserModel _currentUser;
 
+  String _uid;
+  String _username;
+  String _email;
+  String _image;
   @override
   void initState() {
-    super.initState();
+    // TODO: implement initState
     _dark = false;
+    super.initState();
+    getCurrentUser();
   }
+
+  getCurrentUser() async {
+    UserModel currentUser = await context
+        .read<AuthenticationService>()
+        .getUserFromDB(uid: auth.currentUser.uid);
+
+    _currentUser = currentUser;
+
+    print("${_currentUser.username}");
+
+    setState(() {
+      _image = _currentUser.image;
+      _uid = _currentUser.uid;
+      _username = _currentUser.username;
+      _email = _currentUser.email;
+    });
+  }
+
 
   Brightness _getBrightness() {
     return _dark ? Brightness.dark : Brightness.light;
@@ -69,7 +102,7 @@ class _SettingsOnePageState extends State<SettingsOnePage> {
                         //open edit profile
                       },
                       title: Text(
-                        "John Doe",
+                        "By ${_username}",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
@@ -193,7 +226,10 @@ class _SettingsOnePageState extends State<SettingsOnePage> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  //log out
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SplashScreenPage()),
+                );
                 },
               ),
             )
